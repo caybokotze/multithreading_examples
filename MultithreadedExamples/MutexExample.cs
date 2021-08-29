@@ -11,7 +11,7 @@ namespace MultithreadedExamples
         {
             for (int i = 1; i <= 5; i++)
             {
-                var threadObject = new Thread(MutexDemo)
+                var threadObject = new Thread(DoWork)
                 {
                     Name = "Thread " + i
                 };
@@ -22,9 +22,9 @@ namespace MultithreadedExamples
             Console.ReadKey();
         }
 
-        private static void MutexDemo()
+        public void DoWork()
         {
-            Console.WriteLine($"{Thread.CurrentThread.Name} wants to enter critical section for processing.");
+            Console.WriteLine($"{Thread.CurrentThread.Name} wants to party...");
 
             try
             {
